@@ -26,7 +26,7 @@
   "author": "LobeHub <i@lobehub.com>",
   "sideEffects": false,
   "scripts": {
-    "build": "next build",
+    "build": "NODE_OPTIONS='--max_old_space_size=4096' next build",
     "postbuild": "npm run build-sitemap && npm run build-migrate-db",
     "build-migrate-db": "bun run db:migrate",
     "build-sitemap": "tsx ./scripts/buildSitemapIndex/index.ts",
